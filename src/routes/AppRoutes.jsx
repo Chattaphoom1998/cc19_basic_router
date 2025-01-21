@@ -1,7 +1,8 @@
 //rfce
 import React from "react";
 import MainNav from "../components/mainNav";
-import { Link, Route, Routes } from "react-router";
+import { Link, Outlet, Route, Routes } from "react-router";
+import Layout from "../layouts/Layout";
 
 function AppRoutes() {
   return (
@@ -16,7 +17,7 @@ function AppRoutes() {
         <Route path="register" element={<h1>Register</h1>} />
 
         {/* Private */}
-        <Route path="admin">
+        <Route path="admin" element={<Layout />}>
           <Route index element={<h1>Dashboard</h1>} />
           <Route path="manage" element={<h1>Manage page</h1>} />
           <Route path="setting" element={<h1>Setting page</h1>} />
