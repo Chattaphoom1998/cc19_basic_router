@@ -1,20 +1,22 @@
 //rfce
 import React from "react";
-import MainNav from "../components/mainNav";
 import { Link, Outlet, Route, Routes } from "react-router";
 import Layout from "../layouts/Layout";
+import About from "../pages/About.Jsx";
+import Home from "../pages/Home.Jsx";
 
 function AppRoutes() {
   return (
     <div>
-      <MainNav />
       <Routes>
         {/* Public */}
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="about" element={<h1>About</h1>} />
-        <Route path="contact" element={<h1>Contact</h1>} />
-        <Route path="login" element={<h1>Login page</h1>} />
-        <Route path="register" element={<h1>Register</h1>} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<h1>Contact</h1>} />
+          <Route path="login" element={<h1>Login page</h1>} />
+          <Route path="register" element={<h1>Register</h1>} />
+        </Route>
 
         {/* Private */}
         <Route path="admin" element={<Layout />}>
