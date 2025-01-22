@@ -4,6 +4,14 @@ import { Link, Outlet, Route, Routes } from "react-router";
 import Layout from "../layouts/Layout";
 import About from "../pages/About.Jsx";
 import Home from "../pages/Home.Jsx";
+import Contact from "../pages/Contact.Jsx";
+import Login from "../pages/Login.Jsx";
+import Register from "../pages/Register.Jsx";
+import Recap from "../pages/Recap.jsx";
+import Dashboard from "../pages/admin/Dashboard.Jsx";
+import Manage from "../pages/admin/Manage.Jsx";
+import Setting from "../pages/admin/Setting.Jsx";
+import RecapUseState from "../pages/RecapUseState.jsx";
 
 function AppRoutes() {
   return (
@@ -13,16 +21,18 @@ function AppRoutes() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="contact" element={<h1>Contact</h1>} />
-          <Route path="login" element={<h1>Login page</h1>} />
-          <Route path="register" element={<h1>Register</h1>} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="recap" element={<Recap />} />
+          <Route path="recapUseState" element={<RecapUseState />} />
         </Route>
 
         {/* Private */}
         <Route path="admin" element={<Layout />}>
-          <Route index element={<h1>Dashboard</h1>} />
-          <Route path="manage" element={<h1>Manage page</h1>} />
-          <Route path="setting" element={<h1>Setting page</h1>} />
+          <Route index element={<Dashboard />} />
+          <Route path="manage" element={<Manage />} />
+          <Route path="setting" element={<Setting />} />
         </Route>
       </Routes>
     </div>
